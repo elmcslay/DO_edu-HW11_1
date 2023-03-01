@@ -10,6 +10,7 @@ pipeline {
         stage('copy project from github') {
             steps {
                 git 'https://github.com/elmcslay/DO_edu-HW11_1.git'
+                
             }
         }
 
@@ -28,6 +29,7 @@ pipeline {
 
         stage('add&run container to demo-deploy') {
             steps {
+                sh 'adduser --uid 110 jenkins'
                 sh '''ssh -o StrictHostKeyChecking=no root@51.250.102.45 << EOF
                         sudo uname -n
                         docker pull 158.160.25.103:8083/dep
