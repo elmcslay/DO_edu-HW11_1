@@ -2,7 +2,7 @@ pipeline {
     agent {
         docker {
             image '158.160.25.103:8083/build-cont'
-            args '--privileged -v /var/run/docker.sock:/var/run/docker.sock -u root'
+            args '--privileged -v /var/run/docker.sock:/var/run/docker.sock'
         }
     }
 
