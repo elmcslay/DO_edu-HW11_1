@@ -29,9 +29,8 @@ pipeline {
 
         stage('add&run container to demo-deploy') {
             steps {
-                sh 'adduser --uid 110 jenkins'
-                sh '''ssh -o StrictHostKeyChecking=no root@51.250.102.45 << EOF
-                        sudo uname -n
+                //sh 'adduser --uid 110 jenkins'
+                sh '''sudo ssh -o StrictHostKeyChecking=no root@51.250.102.45 << EOF
                         docker pull 158.160.25.103:8083/dep
                         docker run -d -p 8080:8080 158.160.25.103:8083/dep
                 EOF'''
