@@ -21,7 +21,7 @@ pipeline {
 
         stage('create docker image') {
             steps {
-                sh 'docker build --no-cache -t dep -f Dockerfile target/hello-1.0.war'
+                sh 'docker build --no-cache -t dep -f Dockerfile target/'
                 sh 'docker tag dep 158.160.25.103:8083/dep && docker push 158.160.25.103:8083/dep'
             }
         }
