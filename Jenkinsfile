@@ -28,7 +28,7 @@ pipeline {
 
         stage('add&run container to demo-deploy') {
             steps {
-                sh 'ssh-keyscan -H 51.250.102.45 >> ~/.ssh/known_hosts'
+                sh 'ssh-keyscan -H 51.250.102.45 >> /root/.ssh/known_hosts'
                 sh '''ssh root@51.250.102.45 << EOF
                         sudo uname -n
                     EOF'''
