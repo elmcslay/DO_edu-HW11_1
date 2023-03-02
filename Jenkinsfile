@@ -31,8 +31,7 @@ pipeline {
             steps {
                 sh '''ssh -o StrictHostKeyChecking=no root@51.250.102.45 << EOF
                         docker pull 158.160.25.103:8083/dep
-                        docker run -d -p 8080:8080 158.160.25.103:8083/dep
-                EOF'''
+                        docker run -d -p 8080:8080 158.160.25.103:8083/dep'''
             }
         }
     }
