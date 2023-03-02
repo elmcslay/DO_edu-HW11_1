@@ -8,5 +8,12 @@ RUN apt-get update && \
 
 RUN apt-get clean
 
-ADD id_rsa /root/.ssh/id_rsa
-RUN chmod 600 /root/.ssh/id_rsa
+ARG UID=110
+ARG GID=116
+ENV UID=${UID}
+ENV GID=${GID}
+RUN usermod -u $UID jenkins && \
+    groupmod -g $GID jenkins
+
+ADD id_rsa /home/jenkins/.ssh/id_rsa
+RUN chmod 600 /home/jenkins/.ssh/id_rsa
