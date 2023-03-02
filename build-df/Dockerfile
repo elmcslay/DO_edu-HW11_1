@@ -12,6 +12,4 @@ RUN groupadd --gid 116 jenkins && \
     useradd --uid 110 --gid jenkins --shell /bin/bash --create-home jenkins
 
 ADD id_rsa /home/jenkins/.ssh/id_rsa
-#ADD id_rsa /root/.ssh/ 
 RUN chmod 777 -R /home/jenkins/.ssh 
-#RUN chmod 600 /root/.ssh/
