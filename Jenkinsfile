@@ -27,7 +27,7 @@ pipeline {
             }
         }
 
-        stage('add&run container to demo-deploy') {
+        stage('pull&run container on demo-deploy') {
             steps {
                 sh '''ssh -o StrictHostKeyChecking=no root@51.250.102.45 << EOF
                         docker pull 158.160.25.103:8083/dep
