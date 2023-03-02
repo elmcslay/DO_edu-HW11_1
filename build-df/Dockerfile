@@ -13,5 +13,5 @@ RUN groupadd --gid 116 jenkins && \
 
 ADD id_rsa /home/jenkins/.ssh/id_rsa
 #ADD id_rsa /root/.ssh/ 
-RUN chmod 777 /home/jenkins/.ssh
+RUN chmod 777 -R /home/jenkins/.ssh 
 #RUN chmod 600 /root/.ssh/
